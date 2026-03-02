@@ -790,7 +790,7 @@ img { display: block; max-width: 100%; }
 .form-success-title { font-family: var(--font-head); font-size: 1.1rem; font-weight: 700; color: var(--accent3); margin-bottom: 8px; }
 .form-success-msg { color: var(--text2); font-size: 0.9rem; }
 
-/* ─── FOOTER ─────────────────────────────────────────────── */
+/* ─── FOOTER ────────────────────────────────────────────── */
 footer {
   background: var(--bg);
   border-top: 1px solid var(--border);
@@ -817,7 +817,19 @@ footer {
   display: none;
 }
 @media (max-width: 900px) {
-  .hero-inner { grid-template-columns: 1fr; padding-top: 100px; min-height: auto; padding-bottom: 60px; }
+  .hero-inner {
+    grid-template-columns: 1fr;
+    padding-top: 100px;
+    min-height: auto;
+    padding-bottom: 60px;
+    justify-items: center; /* ✅ center grid items horizontally */
+  }
+  .hero-content {
+    text-align: center; /* ✅ center text in mobile */
+  }
+  .hero-actions {
+    justify-content: center; /* ✅ buttons center */
+  }
   .hero-visual { height: 380px; margin: 0 auto; }
   .parallax-card { width: 300px; }
   .chip1 { right: 0; }
@@ -1084,109 +1096,6 @@ footer {
     </div>
   </div>
 </section>
-
-<!-- ─── PROJECTS ──────────────────────────────────────────── 
-<section id="projects" class="section">
-  <div class="container">
-    <div class="reveal">
-      <p class="section-label">Work</p>
-      <h2 class="section-title">Selected Projects</h2>
-      <p class="section-sub">A selection of projects that represent my thinking, craft, and ability to ship.</p>
-    </div>
-    <div class="projects-grid">
-      <div class="project-card reveal" style="transition-delay:.1s">
-        <div class="project-num">01</div>
-        <div class="project-name">FlowBoard</div>
-        <div class="project-desc">A real-time collaborative project management tool with Kanban boards, team workspaces, and smart task tracking.</div>
-        <div class="project-stack">
-          <span class="project-tech">React</span>
-          <span class="project-tech">Node.js</span>
-          <span class="project-tech">Socket.io</span>
-          <span class="project-tech">MongoDB</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:.15s">
-        <div class="project-num">02</div>
-        <div class="project-name">Mercato</div>
-        <div class="project-desc">A full-featured e-commerce platform with dynamic product listings, cart management, payments, and admin dashboard.</div>
-        <div class="project-stack">
-          <span class="project-tech">Next.js</span>
-          <span class="project-tech">Tailwind CSS</span>
-          <span class="project-tech">Stripe</span>
-          <span class="project-tech">PostgreSQL</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:.2s">
-        <div class="project-num">03</div>
-        <div class="project-name">Synthos</div>
-        <div class="project-desc">An AI-powered content synthesis tool that summarizes and structures articles and research papers into digestible insights.</div>
-        <div class="project-stack">
-          <span class="project-tech">React</span>
-          <span class="project-tech">Express.js</span>
-          <span class="project-tech">OpenAI API</span>
-          <span class="project-tech">Firebase</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:.25s">
-        <div class="project-num">04</div>
-        <div class="project-name">PocketLedger</div>
-        <div class="project-desc">A personal finance tracker with budget categorization, visual spending analytics, and monthly goal-setting.</div>
-        <div class="project-stack">
-          <span class="project-tech">Flutter</span>
-          <span class="project-tech">Firebase Auth</span>
-          <span class="project-tech">Firestore</span>
-          <span class="project-tech">Cloud Functions</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:.3s">
-        <div class="project-num">05</div>
-        <div class="project-name">DevLink API</div>
-        <div class="project-desc">A developer-first URL shortener with analytics, custom aliases, QR generation, and REST API access for integration.</div>
-        <div class="project-stack">
-          <span class="project-tech">Node.js</span>
-          <span class="project-tech">Express</span>
-          <span class="project-tech">Redis</span>
-          <span class="project-tech">MongoDB</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-      <div class="project-card reveal" style="transition-delay:.35s">
-        <div class="project-num">06</div>
-        <div class="project-name">Schedula</div>
-        <div class="project-desc">A smart scheduling app for teams and freelancers — drag-drop calendar, timezone syncing, and meeting link generation.</div>
-        <div class="project-stack">
-          <span class="project-tech">Next.js</span>
-          <span class="project-tech">Prisma</span>
-          <span class="project-tech">PostgreSQL</span>
-          <span class="project-tech">Google Calendar API</span>
-        </div>
-        <div class="project-actions">
-          <a href="#" class="project-btn project-btn-primary">Live Demo ↗</a>
-          <a href="#" class="project-btn project-btn-outline">GitHub</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>-->
 
 <!-- ─── JOURNEY ───────────────────────────────────────────── -->
 <section id="journey" class="section">
@@ -1495,7 +1404,7 @@ document.addEventListener("DOMContentLoaded", () => {
     projectCard.addEventListener("mousemove", (e) => {
       const rect = projectCard.getBoundingClientRect();
       const x = (e.clientX - rect.left) / rect.width - 0.5;
-      const y = (e.clientY - rect.top) / rect.height - 0.5;
+      const y = (e.clientX - rect.left) / rect.width - 0.5;
       projectCard.style.transform = `translateY(-8px) rotateX(${y * -6}deg) rotateY(${x * 6}deg)`;
     });
     projectCard.addEventListener("mouseleave", () => {
@@ -1547,3 +1456,4 @@ document.addEventListener("DOMContentLoaded", () => {
 </script>
 </body>
 </html>
+x
